@@ -14,7 +14,7 @@ build:
     - install-glue-kernels = aws_glue_interactive_sessions_kernel.glue_kernel:install
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
