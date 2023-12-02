@@ -1,5 +1,5 @@
 {% set name = "aws-glue-sessions" %}
-{% set version = "1.0.2" %}
+{% set version = "1.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aws-glue-sessions-{{ version }}.tar.gz
-  sha256: 3c5b63af41744d95bba2cac8ea594cbe4c429e6e7661568d995979e1fbee20b5
+  sha256: e4c602f441dc7d965cf31ad255281f932d215603904f093012f393f3c2356a96
 
 build:
   entry_points:
     - install-glue-kernels = aws_glue_interactive_sessions_kernel.glue_kernel:install
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
