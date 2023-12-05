@@ -1,5 +1,5 @@
 {% set name = "aws-glue-sessions" %}
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aws-glue-sessions-{{ version }}.tar.gz
-  sha256: 1dd639e7826158d9c842b0dc1dab504b9e79d25cc076ced8e5cd48c78f7c20f1
+  sha256: e4c602f441dc7d965cf31ad255281f932d215603904f093012f393f3c2356a96
 
 build:
   entry_points:
