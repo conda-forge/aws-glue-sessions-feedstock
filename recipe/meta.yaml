@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aws-glue-sessions-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/aws-glue-sessions-{{ version }}.tar.gz
   sha256: aefda4cf865566eecaf52a3592a2e6685ed237c4bfa6ba9cb0300e06e4bf1bfb
 
 build:
@@ -14,14 +14,14 @@ build:
     - install-glue-kernels = aws_glue_interactive_sessions_kernel.glue_kernel:install
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - hdijupyterutils >=0.6
     - autovizwidget >=0.6
     - ipython >=4.0.2
@@ -46,6 +46,7 @@ test:
     - install-glue-kernels --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://aws.amazon.com/glue/
