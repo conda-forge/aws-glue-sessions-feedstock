@@ -146,6 +146,3 @@ Feedstock Maintainers
 * [@claytonparnell](https://github.com/claytonparnell/)
 * [@just4brown](https://github.com/just4brown/)
 
-
-<!-- dummy commit to enable rerendering -->
-
