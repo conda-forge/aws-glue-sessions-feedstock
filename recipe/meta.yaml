@@ -1,5 +1,6 @@
 {% set name = "aws-glue-sessions" %}
 {% set version = "1.0.8" %}
+{% set python_min = 3.8 %}
 
 package:
   name: {{ name|lower }}
@@ -18,10 +19,11 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - hdijupyterutils >=0.6
     - autovizwidget >=0.6
     - ipython >=4.0.2
