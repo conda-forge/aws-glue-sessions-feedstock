@@ -1,5 +1,6 @@
 {% set name = "aws-glue-sessions" %}
-{% set version = "1.0.7" %}
+{% set version = "1.0.8" %}
+{% set python_min = 3.8 %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aws-glue-sessions-{{ version }}.tar.gz
-  sha256: aefda4cf865566eecaf52a3592a2e6685ed237c4bfa6ba9cb0300e06e4bf1bfb
+  sha256: 214f090d1b5f8fead24e9d7d17b7224aca677cd22acc143b71924c5a7bd21123
 
 build:
   entry_points:
@@ -18,10 +19,11 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - hdijupyterutils >=0.6
     - autovizwidget >=0.6
     - ipython >=4.0.2
